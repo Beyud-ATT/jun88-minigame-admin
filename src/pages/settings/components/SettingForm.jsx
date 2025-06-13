@@ -16,6 +16,7 @@ import { FaMinusCircle, FaPlusCircle } from "react-icons/fa";
 import useSettings from "../../../hooks/useSettings";
 import { useEffect } from "react";
 import useSettingsUpdate from "../../../hooks/useSettingsUpdate";
+import dayjs from "dayjs";
 
 var __rest =
   (this && this.__rest) ||
@@ -52,8 +53,19 @@ export default function SettingForm() {
   };
 
   useEffect(() => {
-    if (data?.data?.data) {
-      form.setFieldsValue(data?.data?.data);
+    const dataValue = data?.data?.data;
+    if (dataValue) {
+      const periodValue = dataValue?.attendance?.period;
+      form.setFieldsValue({
+        ...dataValue,
+        attendance: {
+          ...dataValue?.attendance,
+          period: {
+            start: periodValue?.start ? dayjs(periodValue?.start) : dayjs(),
+            end: periodValue?.end ? dayjs(periodValue?.end) : dayjs(),
+          },
+        },
+      });
     }
   }, [data, form]);
 
@@ -401,17 +413,25 @@ export default function SettingForm() {
                 </Form.Item>
 
                 <Row gutter={16}>
-                  <Col span={12}>
+                  <Col span={8}>
                     <Form.Item
                       name={["attendance", "portalMemo"]}
                       label="Lời nhắn trang thành viên"
                     >
-                      <Input />
+                      <Input placeholder="Nhập lời nhắn" />
+                    </Form.Item>
+                  </Col>
+                  <Col span={4}>
+                    <Form.Item
+                      name={["attendance", "sportBet"]}
+                      label="Tổng cược hợp lệ thể thao"
+                    >
+                      <Input placeholder="Nhập số" />
                     </Form.Item>
                   </Col>
                   <Col span={6}>
                     <Form.Item
-                      name={["attendance", "start"]}
+                      name={["attendance", "period", "start"]}
                       label="Thời gian bắt đầu"
                     >
                       <DatePicker showTime />
@@ -419,7 +439,7 @@ export default function SettingForm() {
                   </Col>
                   <Col span={6}>
                     <Form.Item
-                      name={["attendance", "end"]}
+                      name={["attendance", "period", "end"]}
                       label="Thời gian kết thúc"
                     >
                       <DatePicker showTime />
