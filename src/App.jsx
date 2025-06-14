@@ -4,9 +4,9 @@ import Login from "./pages/auth/Login";
 import { ToastContainer } from "react-toastify";
 import Home from "./pages/Index";
 import { Flex } from "antd";
-import Questions from "./pages/questions/Index";
+// import Questions from "./pages/questions/Index";
 import Settings from "./pages/settings/Index";
-import Histories from "./pages/histories/Index";
+// import Histories from "./pages/histories/Index";
 import Attendance from "./pages/attendance/Index";
 
 function App() {
@@ -17,9 +17,9 @@ function App() {
       <Routes>
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
-          <Route path="questions" element={<Questions />} />
+          {/* <Route path="questions" element={<Questions />} /> */}
           <Route path="settings" element={<Settings />} />
-          <Route path="histories" element={<Histories />} />
+          {/* <Route path="histories" element={<Histories />} /> */}
           <Route path="attendance" element={<Attendance />} />
         </Route>
         <Route path="login" element={<Login />} />

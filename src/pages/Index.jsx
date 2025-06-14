@@ -8,7 +8,7 @@ export default function Home() {
 
   useEffect(() => {
     if (isAuthenticated) {
-      navigate("/questions");
+      navigate("/attendance");
     }
   }, [isAuthenticated, navigate]);
 

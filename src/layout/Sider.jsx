@@ -7,10 +7,15 @@ import { useState } from "react";
 import { FaQuestionCircle, FaRegCalendarAlt } from "react-icons/fa";
 
 const items = [
+  // {
+  //   key: "questions",
+  //   icon: <FaQuestionCircle />,
+  //   label: "Quản lý câu hỏi",
+  // },
   {
-    key: "questions",
-    icon: <FaQuestionCircle />,
-    label: "Quản lý câu hỏi",
+    key: "attendance",
+    icon: <FaRegCalendarAlt />,
+    label: "Lịch sử điểm danh",
   },
   {
     key: "settings",
@@ -22,11 +27,6 @@ const items = [
   //   icon: <MdHistory />,
   //   label: "Lịch sử người chơi",
   // },
-  {
-    key: "attendance",
-    icon: <FaRegCalendarAlt />,
-    label: "Lịch sử điểm danh",
-  },
 ];
 
 export function Sider({ Layout, ...rest }) {
