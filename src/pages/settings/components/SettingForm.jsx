@@ -105,18 +105,12 @@ export default function SettingForm() {
 
                 <Row gutter={16}>
                   <Col span={12}>
-                    <Form.Item
-                      name="lam_dung"
-                      label="Lạm dụng (nhấn Enter để thêm)"
-                    >
+                    <Form.Item name="lam_dung" label="Lạm dụng">
                       <Input placeholder="Nhập lạm dụng" />
                     </Form.Item>
                   </Col>
                   <Col span={12}>
-                    <Form.Item
-                      name="urlApp"
-                      label="URL App (nhấn Enter để thêm)"
-                    >
+                    <Form.Item name="urlApp" label="URL App">
                       <Input placeholder="Nhập URL App" />
                     </Form.Item>
                   </Col>
