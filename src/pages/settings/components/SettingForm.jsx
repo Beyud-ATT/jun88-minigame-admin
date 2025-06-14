@@ -412,7 +412,7 @@ export default function SettingForm() {
                   <Switch />
                 </Form.Item>
 
-                <Row gutter={16}>
+                <Row gutter={[16, 16]}>
                   <Col span={8}>
                     <Form.Item
                       name={["attendance", "portalMemo"]}
@@ -421,7 +421,7 @@ export default function SettingForm() {
                       <Input placeholder="Nhập lời nhắn" />
                     </Form.Item>
                   </Col>
-                  <Col span={4}>
+                  <Col span={8}>
                     <Form.Item
                       name={["attendance", "sportBet"]}
                       label="Tổng cược hợp lệ thể thao"
@@ -429,6 +429,8 @@ export default function SettingForm() {
                       <Input placeholder="Nhập số" />
                     </Form.Item>
                   </Col>
+                </Row>
+                <Row gutter={[16, 16]}>
                   <Col span={6}>
                     <Form.Item
                       name={["attendance", "period", "start"]}
