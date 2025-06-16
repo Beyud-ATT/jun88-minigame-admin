@@ -81,22 +81,22 @@ export default function SettingForm() {
             children: (
               <>
                 <Row gutter={16}>
-                  <Col span={6}>
+                  <Col span={8}>
                     <Form.Item name="vipAccount" label="TK VIP mới tham gia">
                       <Input />
                     </Form.Item>
                   </Col>
-                  <Col span={6}>
+                  <Col span={8}>
                     <Form.Item name="numberDeposit" label="Số lần nạp tiền">
                       <Input />
                     </Form.Item>
                   </Col>
-                  <Col span={6}>
+                  {/* <Col span={6}>
                     <Form.Item name="dayDeposit" label="Số ngày nạp tiền">
                       <Input />
                     </Form.Item>
-                  </Col>
-                  <Col span={6}>
+                  </Col> */}
+                  <Col span={8}>
                     <Form.Item name="totalDayDeposit" label="Tổng số tiền nạp">
                       <Input />
                     </Form.Item>

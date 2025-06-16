@@ -1,9 +1,13 @@
 import { FaEye } from "react-icons/fa";
 import CustomModal from "../../../components/CustomModal";
-import { Button, Col, Flex, Row, Table, Typography } from "antd";
+import { Button, Flex, Table, Typography } from "antd";
 import moment from "moment";
 
 function AttendanceTable({ attendanceDates }) {
+  const dates = attendanceDates?.map((date) => ({
+    date: moment(date).format("DD/MM/YYYY HH:mm:ss"),
+  }));
+
   return (
     <Table
       columns={[
@@ -11,10 +15,9 @@ function AttendanceTable({ attendanceDates }) {
           title: "Ngày điểm danh",
           dataIndex: "date",
           key: "date",
-          render: (text) => moment(text).format("DD/MM/YYYY"),
         },
       ]}
-      dataSource={attendanceDates}
+      dataSource={dates}
       pagination={false}
       size="small"
       bordered
