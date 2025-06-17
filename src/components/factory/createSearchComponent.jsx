@@ -22,7 +22,7 @@ export function createSearchComponent(config) {
 
     function handleFinish(values) {
       searchParams.set(fieldName, values[fieldName]);
-      searchParams.set("page", 1);
+      searchParams.set("pageIndex", 1);
       setSearchParams(searchParams);
     }
 
