@@ -39,32 +39,34 @@ function DetailModalContent({ record }) {
       </Typography.Text>
 
       <Flex vertical gap={5}>
-        <Typography.Title level={5}>
-          Các mốc thưởng đã đạt được:
-        </Typography.Title>
         {milestones.map((milestone) => (
-          <Flex
-            vertical
-            align="start"
-            className="rounded-lg bg-cyan-50 !p-6"
-            style={{ boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)" }}
-          >
-            <Flex gap={5}>
-              Mốc điểm danh: <b>{milestone.streak}</b>
+          <>
+            <Typography.Title level={5}>
+              Các mốc thưởng đã đạt được:
+            </Typography.Title>
+            <Flex
+              vertical
+              align="start"
+              className="rounded-lg bg-cyan-50 !p-6"
+              style={{ boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)" }}
+            >
+              <Flex gap={5}>
+                Mốc điểm danh: <b>{milestone.streak}</b>
+              </Flex>
+              <Flex gap={5}>
+                Điểm thưởng: <b>{milestone.point}</b>
+              </Flex>
+              <Flex gap={5}>
+                Mã code: <b>{milestone.promoCode}</b>
+              </Flex>
+              <Flex gap={5}>
+                Thời gian nhận thưởng:{" "}
+                <b>
+                  {moment(milestone.receivedAt).format("DD/MM/YYYY HH:mm:ss")}
+                </b>
+              </Flex>
             </Flex>
-            <Flex gap={5}>
-              Điểm thưởng: <b>{milestone.point}</b>
-            </Flex>
-            <Flex gap={5}>
-              Mã code: <b>{milestone.promoCode}</b>
-            </Flex>
-            <Flex gap={5}>
-              Thời gian nhận thưởng:{" "}
-              <b>
-                {moment(milestone.receivedAt).format("DD/MM/YYYY HH:mm:ss")}
-              </b>
-            </Flex>
-          </Flex>
+          </>
         ))}
       </Flex>
 
