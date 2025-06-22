@@ -1,11 +1,14 @@
 import { FaEye } from "react-icons/fa";
 import CustomModal from "../../../components/CustomModal";
 import { Button, Flex, Table, Typography } from "antd";
-import moment from "moment";
+import moment from "moment-timezone";
 
 function AttendanceTable({ attendanceDates }) {
   const dates = attendanceDates?.map((date) => ({
-    date: moment(date).format("DD/MM/YYYY HH:mm:ss"),
+    date: moment(date)
+      // eslint-disable-next-line no-undef
+      .tz(process.env.VITE_CUSTOMER_TIMEZONE)
+      .format("DD/MM/YYYY HH:mm:ss"),
   }));
 
   return (
