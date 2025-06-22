@@ -6,8 +6,7 @@ import moment from "moment-timezone";
 function AttendanceTable({ attendanceDates }) {
   const dates = attendanceDates?.map((date) => ({
     date: moment(date)
-      // eslint-disable-next-line no-undef
-      .tz(process.env.VITE_CUSTOMER_TIMEZONE)
+      .tz(import.meta.env.VITE_CUSTOMER_TIMEZONE)
       .format("DD/MM/YYYY HH:mm:ss"),
   }));
 
